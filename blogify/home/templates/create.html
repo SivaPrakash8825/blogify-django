@@ -1,0 +1,69 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>createpage</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slidemenu active">
+        <div class="slide-holder">
+          <i class="ri-close-line"></i>
+          <div class="user-details">
+            <div class="profile">
+              <img src="./images/img1.png" />
+            </div>
+            <p id="username"></p>
+          </div>
+          <ul>
+            <li><a href="./home.html">home</a></li>
+            <li><a href="./create.html">newpost</a></li>
+            <li><a href="./editprofile.html">editprofile</a></li>
+          </ul>
+        </div>
+      </div>
+      <nav class="top-navbar">
+        <div class="nav-left">
+          <h3></h3>
+        </div>
+        <div class="nav-right">
+          <ul>
+            <li><a href="/home">home</a></li>
+            <li><a href="/create">newpost</a></li>
+          </ul>
+        </div>
+      </nav>
+      <form class="createholder" action="/create/" method="post">
+        {%csrf_token%}
+        <div class="createbox">
+          <div>
+            <p>Title:</p>
+            <input type="text" name="title" id="title" />
+          </div>
+          <div>
+            <p>describition</p>
+            <textarea name="describe" id="textarea"></textarea>
+          </div>
+          <div id="buttons">
+            <a href="{}">cancel</a>
+            <input type="submit" value="create" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="showupdated" class="active">
+      <div class="info"><img src="./images/aeroplane.png" alt="" /></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+  </body>
+  <!--   <script src="./node_modules/axios/dist/axios.min.js"></script> -->
+
+  <script src="./create1.js"></script>
+</html>

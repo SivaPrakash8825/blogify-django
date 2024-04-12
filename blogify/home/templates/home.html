@@ -1,0 +1,99 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home page</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    {% comment %}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet" />
+    {% endcomment %}
+  </head>
+  <body>
+    <!-- <div id="preloader">
+      <img src="./image/loader3.gif" alt="" />
+    </div> -->
+    <div class="container">
+      <div class="slidemenu active">
+        <div class="slide-holder">
+          <i class="ri-close-line"></i>
+          {% comment %}
+          <div class="user-details">
+            <div class="profile">
+              <img src="{% static 'image/logo' %}" alt="asdf" id="imghead" />
+            </div>
+            <p id="username">siva prakash</p>
+          </div>
+          {% endcomment %}
+          <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="./create.html">newpost</a></li>
+            <li>
+              <a href="./editprofile.html">editprofile</a>
+            </li>
+            <li><a href="./index.html" onclick="removecookie()">logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <nav class="top-navbar">
+        <div class="nav-left">
+          <img src="{% static 'image/logo.png' %}" alt="fasdfdf" />
+        </div>
+        <div class="nav-right">
+          <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="/create">newpost</a></li>
+
+            <li><a href="/logout/">logout</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="top-imageholder">
+        <div id="animateslide">
+          <h1>Hii {{user}}</h1>
+          <p>It help share your knowledge and gain information from others</p>
+        </div>
+        <div class="animimg">
+          <img src="{% static 'image/bac2.webp' %}" />
+          <img src="{% static 'image/gif1.gif' %}" />
+        </div>
+      </div>
+      <div class="postheading">
+        <h1>POST</h1>
+      </div>
+      <div class="postview">
+        {% for val in posts%}
+        <div class="usercontent">
+          <div class="boxuser">
+            <p>{{val.name}}</p>
+          </div>
+          <h1>{{val.title}}</h1>
+          <p>{{val.describe}}</p>
+          <div class="infobtn">
+            <div class="likebtn">
+              <div class="likealign"></div>
+
+              <i class="ri-chat-1-line"></i>
+            </div>
+            <div class="bookmark">
+              <i class="ri-bookmark-line"></i>
+            </div>
+          </div>
+        </div>
+        {% endfor%}
+      </div>
+    </div>
+    {% comment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    {% endcomment %}
+  </body>
+  {% comment %}
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  {% endcomment %}
+</html>
